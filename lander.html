@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Biggest John</title>
+    <link rel="icon" href="https://i.imgur.com/HXgcBEH.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .background{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/cxYKIdS.jpg');
+            background-size: auto;
+            background-repeat: repeat;
+            z-index: -1; /* Ensure it's behind other content */
+            animation: scrollBackground 120s linear infinite;
+        }
+        @keyframes scrollBackground {
+            from {
+                background-position: 100% 0;
+            }
+            to {
+                background-position: 0 0;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative; /* Added position relative to container */
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px; /* Adding border-radius to curve the edges */
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+        .bio {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .bio p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #fff;
+        }
+        .social-links a.youtube:hover {
+            color: #f15a25; /* Changed color to the shade of orange on hover */
+        }
+        .tab {
+            display: inline-block;
+            background-color: #0ea5da;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease; 
+        }
+        .tab:hover {
+            background-color: #f15a25; /* Changed background color on hover */
+            color: #fff; /* Kept text color white on hover */
+        }
+        .video-list {
+            display: none;
+            background-size: cover;
+        }
+        .video-list.active {
+            display: block;
+        }
+        .video-list .video-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .video-list .video-title {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .video-list iframe {
+            width: 560px; /* Adjusted width for better thumbnail visibility */
+            height: 315px; /* Adjusted height to maintain aspect ratio */
+            border-radius: 20px;
+        }
+
+        .subscriber-counter,
+        .view-counter {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .subscriber-counter {
+            bottom: 20px;
+            right: 20px;
+        }
+        .view-counter {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        /* About Me section styles */
+        #aboutMe {
+            display: none;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="background"></div>
+<div class="container">
+    <div class="logo">
+        <img src="https://i.imgur.com/d4HTXFW.jpg" alt="The Biggest John">
+    </div>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/v2PgeF0hQ9E?si=iyQg399eU5n2vmPx" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="bio">
+        <p>More Soon</p>
+    </div>
+    <div class="social-links">
+        <a href="https://www.youtube.com/channel/UCd6FS9Ok1AVackhjXVWoPOg" target="_blank" class="youtube">YouTube</a>
+        <a href="#" id="moreVideos" class="tab">More Videos</a>
+        <a href="mailto:bigjohn@thebiggestjohn.com" class="tab">Contact Me</a>
+        <!-- Add the "About Me" tab -->
+        <a href="about_me.html" class="tab">About Me</a>
+    </div>
+
+    <div class="subscriber-counter" id="subscriberCounter">Subscribers:</div>
+    <div class="view-counter" id="viewCounter">Views:</div>
+    <div class="video-list" id="videoList">
+		
+		
+		<div class="video-wrapper">
+            <div class="video-title">nothing is scary anymore.</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/MB0zKViJsNE?si=_wYuVH8qXZr2OPNM&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">What Happened to Big John?</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/v2PgeF0hQ9E?si=iyQg399eU5n2vmPx" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+		<div class="video-wrapper">
+            <div class="video-title">The Skibidi Toilet Degenerates</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/e7v4odceMTg?si=52jnMRT9R8t8VUdf" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">Talent Shows were a Waste of our Childhood</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hVMM_Z9_t2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">I Scheduled This Video in 2022</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hfsh2xnMpQI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">Valorant and CS:GO are the Same Game</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aLiY6bUq9Yk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">TikTok Makes my Brain Turn to Goo</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KWoicp34xOE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">We Need to Delete Twitch</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/78Zrn79OC5k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- About Me section -->
+    <div id="aboutMe">
+        <h2>About Me</h2>
+        <p>This is where you can introduce yourself and provide more information about you.</p>
+    </div>
+</div>
+<script>
+    function fetchSubscriberCount() {
+        fetch('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCd6FS9Ok1AVackhjXVWoPOg&key=AIzaSyAFIjKR17MlXlSXUnvQ69gI8MEbh4iMcyQ')
+            .then(response => response.json())
+            .then(data => {
+                const subscriberCount = data.items[0].statistics.subscriberCount;
+                document.getElementById('subscriberCounter').textContent = `Subscribers: ${subscriberCount}`;
+            })
+            .catch(error => console.error('Error fetching subscriber count:', error));
+    }
+
+    function fetchViewCount() {
+        fetch('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCd6FS9Ok1AVackhjXVWoPOg&key=AIzaSyAFIjKR17MlXlSXUnvQ69gI8MEbh4iMcyQ')
+            .then(response => response.json())
+            .then(data => {
+                const viewCount = data.items[0].statistics.viewCount;
+                document.getElementById('viewCounter').textContent = `Views: ${viewCount}`;
+            })
+            .catch(error => console.error('Error fetching view count:', error));
+    }
+
+    // Call fetchSubscriberCount initially
+    fetchSubscriberCount();
+    fetchViewCount();
+
+    // Call fetchSubscriberCount every 10 seconds (10000 milliseconds)
+    setInterval(() => {
+        fetchSubscriberCount();
+        fetchViewCount();
+    }, 10000);
+</script>
+
+<script>
+    document.getElementById("moreVideos").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("videoList").classList.toggle("active");
+    });
+
+    // JavaScript to toggle visibility of the About Me section
+    document.querySelector('.tab[href="#aboutMe"]').addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("aboutMe").style.display = "block";
+    });
+</script>
+</body>
+</html>
+
