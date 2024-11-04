@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - The Biggest John</title>
+    <link rel="icon" href="https://i.imgur.com/HXgcBEH.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .background{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/cxYKIdS.jpg');
+            background-size: auto;
+            background-repeat: repeat;
+            z-index: -1; /* Ensure it's behind other content */
+            animation: scrollBackground 120s linear infinite;
+        }
+        @keyframes scrollBackground {
+            from {
+                background-position: 100% 0;
+            }
+            to {
+                background-position: 0 0;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative; /* Added position relative to container */
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px; /* Adding border-radius to curve the edges */
+        }
+		.bio-content {
+			display: flex;
+			align-items: center;
+		}
+   
+        .bio {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .bio p {
+            font-size: 20px;
+            line-height: 1.6;
+			flex; 1;
+        }
+		.bio-image {
+			width: 300px;
+			flex-shrink: 0; /* Prevent image from shrinking */
+			margin-left: 20px;
+		}
+
+		.bio-image img {
+			max-width: 100%; /* Make sure the image doesn't overflow */
+			height: auto;
+			border-radius: 10px; /* Example border-radius */
+		}
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #fff;
+        }
+        .social-links a.youtube:hover {
+            color: #f15a25; /* Changed color to the shade of orange on hover */
+        }
+        .tab {
+            display: inline-block;
+            background-color: #0ea5da;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease; 
+        }
+        .tab:hover {
+            background-color: #f15a25; /* Changed background color on hover */
+            color: #fff; /* Kept text color white on hover */
+        }
+        .video-list {
+            display: none;
+            background-size: cover;
+        }
+        .video-list.active {
+            display: block;
+        }
+        .video-list .video-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .video-list .video-title {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .video-list iframe {
+            width: 560px; /* Adjusted width for better thumbnail visibility */
+            height: 315px; /* Adjusted height to maintain aspect ratio */
+            border-radius: 20px;
+        }
+
+        .subscriber-counter,
+        .view-counter {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .subscriber-counter {
+            bottom: 20px;
+            right: 20px;
+        }
+        .view-counter {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        /* About Me section styles */
+        #aboutMe {
+            display: none;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            color: #fff;
+        }
+	
+        }
+
+        /* Additional CSS styles for the portfolio section */
+        #aboutMe {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            color: #fff;
+        }
+        .aboutMe-content {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="background"></div>
+<div class="container">
+    <div class="logo">
+        <img src="https://imgur.com/qfttzl3.jpg" alt="The Biggest John">
+    </div>
+    
+    <div class="bio">
+		<h1>About Me</h1>
+		<hr>
+        <div class="bio-content">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in porta eros. Aenean porttitor tempor diam, ac gravida nisl interdum a. Pellentesque in tempus tortor, in eleifend felis. Maecenas condimentum nulla nec lectus rhoncus, vel vehicula orci fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer et tortor in nunc tempor scelerisque. Nullam rhoncus tortor at velit mattis, at mollis ex accumsan.
+
+Fusce dignissim placerat mattis. Phasellus ac vulputate enim. Praesent ut odio maximus, tincidunt orci vitae, cursus urna. Quisque at congue libero, ultrices feugiat mauris. Donec pharetra accumsan diam sit amet interdum. Praesent tortor velit, porta eu dolor ac, mollis egestas massa. Sed convallis justo quis suscipit sodales. Mauris congue vel lacus commodo blandit. Cras lacus neque, dignissim sed nulla a, dictum pharetra ex. Sed ut libero varius, gravida dui at, pretium ex.p>
+			<div class="bio-image">
+				<img src="https://imgur.com/ZWM6fYF.jpg" alt="A portrait photo of The Biggest John">
+			</div>
+		</div>
+	</div>
+    <div class="social-links">
+        <a href="https://www.youtube.com/channel/UCd6FS9Ok1AVackhjXVWoPOg" target="_blank" class="youtube">YouTube</a>
+        <a href="#" id="moreVideos" class="tab">Videos</a>
+        <a href="mailto:biggestjohnathan@gmail.com" class="tab">Contact Me</a>
+        <a href="index.html" class="tab">Back to Home</a> <!-- Added Back to Home tab -->
+    </div>
+
+    <div class="subscriber-counter" id="subscriberCounter">Subscribers:</div>
+    <div class="view-counter" id="viewCounter">Views:</div>
+    <div class="video-list" id="videoList">
+
+        <div class="video-wrapper">
+            <div class="video-title">TRY TO LAUGH CHALLENGE</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qs1AkMNBID0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">Talent Shows were a Waste of our Childhood</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hVMM_Z9_t2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">I Scheduled This Video in 2022</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hfsh2xnMpQI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">Valorant and CS:GO are the Same Game</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aLiY6bUq9Yk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">TikTok Makes my Brain Turn to Goo</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KWoicp34xOE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <div class="video-title">We Need to Delete Twitch</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/78Zrn79OC5k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</div>
+<script>
+       function fetchSubscriberCount() {
+        fetch('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCd6FS9Ok1AVackhjXVWoPOg&key=AIzaSyAFIjKR17MlXlSXUnvQ69gI8MEbh4iMcyQ')
+            .then(response => response.json())
+            .then(data => {
+                const subscriberCount = data.items[0].statistics.subscriberCount;
+                document.getElementById('subscriberCounter').textContent = `Subscribers: ${subscriberCount}`;
+            })
+            .catch(error => console.error('Error fetching subscriber count:', error));
+    }
+
+    function fetchViewCount() {
+        fetch('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCd6FS9Ok1AVackhjXVWoPOg&key=AIzaSyAFIjKR17MlXlSXUnvQ69gI8MEbh4iMcyQ')
+            .then(response => response.json())
+            .then(data => {
+                const viewCount = data.items[0].statistics.viewCount;
+                document.getElementById('viewCounter').textContent = `Views: ${viewCount}`;
+            })
+            .catch(error => console.error('Error fetching view count:', error));
+    }
+
+    // Call fetchSubscriberCount initially
+    fetchSubscriberCount();
+    fetchViewCount();
+
+    // Call fetchSubscriberCount every 10 seconds (10000 milliseconds)
+    setInterval(() => {
+        fetchSubscriberCount();
+        fetchViewCount();
+    }, 10000);
+</script>
+
+<script>
+    // JavaScript to toggle visibility of the More Videos section
+    document.getElementById("moreVideos").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("videoList").classList.toggle("active");
+    });
+</script>
+</body>
+</html>
