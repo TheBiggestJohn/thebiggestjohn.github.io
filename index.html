@@ -115,12 +115,11 @@
             color: #fff; /* Kept text color white on hover */
         }
         .video-list {
-	    max-height: 0;
-    	    overflow: hidden;
-    	    transition: max-height 0.5s ease-out;
+	    display: none;
+            background-size: cover;
         }
         .video-list.active {
-	    max-height: 100000px;
+	    display: block;
         }
         .video-list .video-wrapper {
             text-align: center;
