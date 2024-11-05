@@ -266,7 +266,7 @@
                 
                 // Remove animation class after animation ends
                 setTimeout(() => {
-                    subscriberCounter.classList.remove('animated');
+                    viewCounter.classList.remove('animated');
                 }, 500); // Matches the duration of the animation (0.5s)
             })
             .catch(error => console.error('Error fetching view count:', error));
