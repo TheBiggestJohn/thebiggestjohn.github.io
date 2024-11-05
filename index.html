@@ -258,8 +258,8 @@
                 const viewCount = data.items[0].statistics.viewCount;
                 const viewCounter = document.getElementById('viewCounter').textContent = `Views: ${viewCount}`;
 		    // Check if the count has changed
-            if (viewCounter.textContent !== `Subscribers: ${viewCount}`) {
-        	viewCounter.textContent = `Subscribers: ${viewCount}`;
+            if (viewCounter.textContent !== `Views: ${viewCount}`) {
+        	viewCounter.textContent = `Views: ${viewCount}`;
                 
                 // Add animation class to trigger animation
                 viewCounter.classList.add('animated');
