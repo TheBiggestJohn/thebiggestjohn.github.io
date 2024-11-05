@@ -231,7 +231,18 @@
             .then(response => response.json())
             .then(data => {
                 const subscriberCount = data.items[0].statistics.subscriberCount;
-                document.getElementById('subscriberCounter').textContent = `Subscribers: ${subscriberCount}`;
+                const subscriberCounter = document.getElementById('subscriberCounter').textContent = `Subscribers: ${subscriberCount}`;
+		    // Check if the count has changed
+            if (subscriberCounter.textContent !== `Subscribers: ${subscriberCount}`) {
+                subscriberCounter.textContent = `Subscribers: ${subscriberCount}`;
+                
+                // Add animation class to trigger animation
+                subscriberCounter.classList.add('animated');
+                
+                // Remove animation class after animation ends
+                setTimeout(() => {
+                    subscriberCounter.classList.remove('animated');
+                }, 500); // Matches the duration of the animation (0.5s)
             })
             .catch(error => console.error('Error fetching subscriber count:', error));
     }
@@ -241,7 +252,18 @@
             .then(response => response.json())
             .then(data => {
                 const viewCount = data.items[0].statistics.viewCount;
-                document.getElementById('viewCounter').textContent = `Views: ${viewCount}`;
+                const viewCounter = document.getElementById('viewCounter').textContent = `Views: ${viewCount}`;
+		    // Check if the count has changed
+            if (viewCounter.textContent !== `Subscribers: ${viewCount}`) {
+        	viewCounter.textContent = `Subscribers: ${viewCount}`;
+                
+                // Add animation class to trigger animation
+                viewCounter.classList.add('animated');
+                
+                // Remove animation class after animation ends
+                setTimeout(() => {
+                    subscriberCounter.classList.remove('animated');
+                }, 500); // Matches the duration of the animation (0.5s)
             })
             .catch(error => console.error('Error fetching view count:', error));
     }
