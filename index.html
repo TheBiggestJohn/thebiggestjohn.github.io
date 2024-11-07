@@ -94,17 +94,22 @@
             margin-top: 20px;
         }
         .social-links a {
-            color: #fff;
+            display: inline-block;
+            background-color: #0ea5da; /* Initial color */
+            color: #fff; /* Initial text color */
+            padding: 10px 20px;
+            border-radius: 20px;
             text-decoration: none;
             margin: 0 10px;
-            font-size: 24px;
-            transition: color 0.3s ease;
+            font-size: 18px;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
         .social-links a:hover {
             color: #fff;
         }
         .social-links a.youtube:hover {
-            color: #f15a25; /* Changed color to the shade of orange on hover */
+            background-color: #f15a25; /* Changed color to the shade of orange on hover */
+	    color: #fff;
         }
         .tab {
             display: inline-block;
